@@ -1,5 +1,5 @@
 # Prompt users for input
-fileChosen = input("Which file to visualize - huskies2016.txt or sampme_data.txt? (recommend the former one) -- ")
+fileChosen = input("Which file to visualize - huskies2016.txt or sampme_data.txt? (I prefer the former) -- ")
 title = input("What should the chart be named? -- ")
 colorChosen=input("Choose color theme - rainbow or tableau? -- ")
 
@@ -77,13 +77,13 @@ def draw_axes(num_of_ticks):
     geobugi.penup()       # do not draw while moving
     geobugi.goto(originx,originy-label)  # walk to coordinates
     geobugi.pendown()     # start drawing again
-    step=width/len(name)
-    x=4+originx+step/2+step*spacer*2/len(name)
+    per=width/len(name)
+    x=4+originx+per/2+per*spacer*2/len(name)
     geobugi.penup()
     for i in name:
         geobugi.setx(x)
         geobugi.write(i,True,align='center',font=newfont)
-        x=x+step
+        x=x+per
     geobugi.goto(originx,originy+label)
     geobugi.pendown()
     geobugi.left(90)
